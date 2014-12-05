@@ -1,6 +1,6 @@
 class Date
   def to_hijri
-    Hijri::Converter.greo_to_hijri(self)
+    Hijri::Hijri.new *Hijri::Converter.greo_to_hijri(self)
   end
   
   def last_day_of_gregorian_month(month)

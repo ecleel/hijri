@@ -14,14 +14,14 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_equal "1433-09-18", date.to_s
   end
   
-  def test_datetime_to_hijri
+  def test_greo_date_to_hijri
     date = Date.new 2012, 8, 6
     assert_equal "1433-09-18", date.to_hijri.to_s
   end
   
   def test_hijri_to_greo
     h = Hijri::Hijri.new 1, 1, 1430
-    g = DateTime.new  2008, 11, 29
+    g = Date.new  2008, 11, 29
     assert_equal(g , h.to_greo)
   end
 

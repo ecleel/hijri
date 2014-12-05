@@ -41,52 +41,63 @@ module Hijri
     # Absolute Methods
     def greo_to_absolute(year, month, day)
       # Computes the absolute date from the Gregorian date.
-      @d = day
-      @m = month - 1
-      @m.downto(1) do |m|
-        @d += last_day_of_gregorian_month(@m, year)
+      d = day
+      (month - 1).downto(1) do |m|
+        d += last_day_of_gregorian_month(m, year)
       end
-      return (@d + 365 * (year - 1) + (year -1) / 4.0 - (year - 1) / 100.0 + (year - 1) / 400.0).to_i
+
+      return (d +                      # days this year
+              365 * (year - 1) +       # days in previous years ignoring leap days
+              (year - 1) / 4.0 -       # Julian leap days before this year...
+              (year - 1) / 100.0 +     # ...minus prior century years...
+              (year - 1) / 400.0       # ...plus prior years divisible by 400
+              ).to_i
     end
-      
+
     def absolute_to_greo(abs)
       # Computes the Gregorian date from the absolute date.
       # Search forward year by year from approximate year
-      puts abs
-      year = (abs / 366.0 + 0.5).to_i
-      while (abs >= greo_to_absolute(1, 1, year + 1))
+      puts "abs: #{abs}"
+      year = (abs / 366 + 0.5).to_i
+      puts "year before: #{year}"
+      while abs >= greo_to_absolute(year + 1, 1, 1)
         year += 1
       end
+      puts "year after: #{year}"
       # Search forward month by month from January
       month = 1
-      while (abs > greo_to_absolute(last_day_of_gregorian_month(month, year), month, year))
+      while abs > greo_to_absolute(year, month, last_day_of_gregorian_month(month, year))
         month += 1
       end
-      day = abs - greo_to_absolute(1, month, year) + 1
+      day = abs - greo_to_absolute(year, month, 1) + 1
+
       return [year, month, day]
     end
       
     def absolute_to_hijri(abs)
       # Computes the Islamic date from the absolute date.
-      # puts "abs #{abs} and islamicEpoch #{IslamicEpoch}"
-      if (abs <= ISLAMIC_EPOCH)
+      if abs <= ISLAMIC_EPOCH
         # Date is pre-Islamic
         month = 0
         day = 0
         year = 0
       elsif
+
         # Search forward year by year from approximate year
         year = ((abs - ISLAMIC_EPOCH) / 355.0).to_i
-        while (abs >= hijri_to_absolute(1,1,year+1))  
+        while abs >= hijri_to_absolute(year+1, 1, 1)
           year += 1
         end
+
         # Search forward month by month from Muharram
         month = 1
-        while (abs > hijri_to_absolute(last_day_of_islamic_month(month,year), month, year))
+        while abs > hijri_to_absolute(year, month, last_day_of_islamic_month(month, year))
           month += 1
         end
-        day = abs - hijri_to_absolute(1, month, year) + 1
+
+        day = abs - hijri_to_absolute(year, month, 1) - 1
       end
+
       return [year, month, day]
     end
   end

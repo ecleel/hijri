@@ -7,7 +7,7 @@ module Hijri
     def self.greo_to_hijri greg
       absolute_to_hijri(greo_to_absolute(greg.year, greg.month, greg.day))
     end
-    
+
     module_function 
                     
     # Hijri Methods
@@ -91,8 +91,3 @@ module Hijri
     end
   end
 end
-
-# h = Hijri.new 1434, 9, 20
-# puts Converter.hijri_to_greo(h)
-  
-

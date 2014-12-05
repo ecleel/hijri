@@ -70,23 +70,3 @@ module Hijri
 
   end
 end
-
-# puts Converter.absolute2islamic(Converter.islamic2absolute(15,2,1431))
-# tt, eq, nq = 0, 0, 0
-# (1..12).each do |m|
-#   (1..30).each do |d|
-#     date = "#{d}#{m}2010"
-#     date_converted = Hijri.absolute2gregorian(Hijri.gregorian2absolute(d, m, 2010)).join
-#     if date == date_converted
-#       message = "#{date} == #{date_converted}"
-#       eq += 1
-#     else
-#       message = "#{date} != #{date_converted}"
-#       nq += 1
-#     end
-#     puts message
-#     tt += 1
-#   end
-# end
-# 
-# puts "total #{tt} equals #{eq} not equals #{nq}"

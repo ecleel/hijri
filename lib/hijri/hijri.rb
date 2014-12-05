@@ -32,7 +32,7 @@ module Hijri
     end
   
     def to_greo
-      Absolute.new(self).to_greo
+      Converter.hijri_to_greo(self)
     end
   
     class << self

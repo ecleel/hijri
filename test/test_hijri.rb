@@ -24,15 +24,8 @@ class TestHijri < MiniTest::Unit::TestCase
     g = Date.new  2008, 12, 29
     assert_equal(g , h.to_greo)
   end
-
-  # def test_georigean_converter  
-  #   (1..12).each do |m|
-  #     (1..30).each do |d|
-  #       date = "#{d}#{m}2010"
-  #       date_converted = Hijri.absolute2gregorian(Hijri.gregorian2absolute(d, m, 2010)).join
-  #       assert(date == date_converted, "Faild: #{date} not equal to #{date_converted}")
-  #     end
-  #   end
-  # end
   
+  # TODO test hijri.now  
+  # TODO test Hijri::Date
+  # TODO test Hijri::DateTime
 end

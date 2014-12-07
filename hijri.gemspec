@@ -5,8 +5,8 @@ require File.expand_path('../lib/hijri/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = "hijri"
   gem.version       = Hijri::VERSION
-  gem.summary       = %q{TODO: Summary}
-  gem.description   = %q{TODO: Description}
+  gem.summary       = %q{Hijri Date Library for Ruby}
+  gem.description   = %q{hijri is full Islamic Hijri calendar lib for ruby.}
   gem.license       = "MIT"
   gem.authors       = ["Abdulaziz AlShetwi"]
   gem.email         = "ecleeld@gmail.com"

@@ -20,8 +20,8 @@ class TestHijri < MiniTest::Unit::TestCase
   end
   
   def test_hijri_to_greo
-    h = Hijri::Hijri.new 1, 1, 1430
-    g = Date.new  2008, 11, 29
+    h = Hijri::Hijri.new 1430, 1, 1
+    g = Date.new  2008, 12, 29
     assert_equal(g , h.to_greo)
   end
 

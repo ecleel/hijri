@@ -25,7 +25,7 @@ module Hijri
       nonleap_year_days  = 354 * (year - 1)
       leap_year_days = (3 + (11 * year)) / 30.0
       this_year  = (month / 2.0).to_i
-      
+
       return (day + month_days + this_year + nonleap_year_days + leap_year_days + ISLAMIC_EPOCH).to_i
     end
       
@@ -57,13 +57,10 @@ module Hijri
     def absolute_to_greo(abs)
       # Computes the Gregorian date from the absolute date.
       # Search forward year by year from approximate year
-      puts "abs: #{abs}"
-      year = (abs / 366 + 0.5).to_i
-      puts "year before: #{year}"
+      year = (abs / (366.0 + 0.5)).to_i
       while abs >= greo_to_absolute(year + 1, 1, 1)
         year += 1
       end
-      puts "year after: #{year}"
       # Search forward month by month from January
       month = 1
       while abs > greo_to_absolute(year, month, last_day_of_gregorian_month(month, year))

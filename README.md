@@ -21,7 +21,6 @@ Or install it yourself as:
 
 ## Usage
 
-    Hijri.now
     DateTime.now.to_hijri
     hijri = Hijri.new 1430, 1, 3
     hijri.to_greo
@@ -29,6 +28,13 @@ Or install it yourself as:
 
 
 ## TODO
+
+- [ ] Add Hijri::Date and Hijri::DateTime.
+- [ ] Accept test error with one day range.
+- [ ] Add Hijri.now to create Hijri::DateTime object.
+- [ ] Add Hijri.today to create Hijri::Date object.
+- [ ] Implement strftime method.
+
 
 ## Contributing
 

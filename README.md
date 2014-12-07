@@ -21,11 +21,12 @@ Or install it yourself as:
 
 ## Usage
 
-Hijri.now
-DateTime.now.to_hijri
-hijri = Hijri.new 1,2,3,4,5,6
+    Hijri.now
+    DateTime.now.to_hijri
+    hijri = Hijri.new 1430, 1, 3
+    hijri.to_greo
 
-TODO: Write usage instructions here
+
 
 ## TODO
 

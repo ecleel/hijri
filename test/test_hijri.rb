@@ -20,7 +20,6 @@ class TestHijri < MiniTest::Unit::TestCase
     # hard and complecated and there is error ratio to it. Because
     # of that we accept multiple date as a result.
     correct_dates = (14..16).map {|n| "1436-02-#{n}" }
-    puts correct_dates
     assert_includes correct_dates, date.to_hijri.to_s
   end
   

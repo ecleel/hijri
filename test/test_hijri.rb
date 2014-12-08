@@ -29,7 +29,13 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_equal(g , h.to_greo)
   end
   
-  # TODO test hijri.now  
+  def test_hijri_date_today
+    gdate = Date.today
+    hdate = Hijri::Date.today
+    assert_equal gdate, hdate.to_greo
+  end
+
+  # TODO test hijri.now 
   # TODO test Hijri::Date
   # TODO test Hijri::DateTime
 end

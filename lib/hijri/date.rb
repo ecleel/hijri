@@ -37,9 +37,10 @@ module Hijri
 
     class << self
       def today
-        d = Date.send(:now)
-        # Hijri.new.greo_to_hijri(d)
+        date = ::Date.today
+        date.to_hijri
       end
     end
+
   end
 end

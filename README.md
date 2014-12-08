@@ -25,17 +25,27 @@ Or install it yourself as:
 
 ## Usage
 
-    DateTime.now.to_hijri
-    hijri = Hijri.new 1430, 1, 3
-    hijri.to_greo
+```ruby
+require 'hijri'
+
+# you can create hijri date from stdlib Date class.
+h = Date.today.to_hijri
+# or you can initialize new one.
+hijri = Hijri::Date.new 1430, 1, 3
+# or you get today hijri date directly.
+toady = Hijri::Date.today
+# and you can convert hijri date to greogian date.
+hijri.to_greo
+
+```
 
 
 ## TODO
 
 - [ ] Add Hijri::Date and Hijri::DateTime.
-- [ ] Accept test error with one day range.
-- [ ] Add Hijri.now to create Hijri::DateTime object.
-- [ ] Add Hijri.today to create Hijri::Date object.
+- [x] Accept test error with one day range.
+- [ ] Add Hijri::DateTime.now to create Hijri::DateTime object.
+- [x] Add Hijri::Date.today to create Hijri::Date object with today date.
 - [ ] Implement strftime method.
 - [ ] Add Comparable for Hijri::Date.
 

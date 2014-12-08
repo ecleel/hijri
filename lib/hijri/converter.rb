@@ -57,7 +57,7 @@ module Hijri
     def absolute_to_greo(abs)
       # Computes the Gregorian date from the absolute date.
       # Search forward year by year from approximate year
-      year = (abs / (366.0 + 0.5)).to_i
+      year = (abs / 366.0 + 0.5).to_i
       while abs >= greo_to_absolute(year + 1, 1, 1)
         year += 1
       end
@@ -92,7 +92,7 @@ module Hijri
           month += 1
         end
 
-        day = abs - hijri_to_absolute(year, month, 1) - 1
+        day = abs - hijri_to_absolute(year, month, 1) + 1
       end
 
       return [year, month, day]

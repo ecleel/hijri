@@ -15,8 +15,13 @@ class TestHijri < MiniTest::Unit::TestCase
   end
   
   def test_greo_date_to_hijri
-    date = Date.new 2012, 8, 6
-    assert_equal "1433-09-18", date.to_hijri.to_s
+    date = Date.new 2014, 12, 7
+    # switiching between solar calendar and lunar calendar is a bit
+    # hard and complecated and there is error ratio to it. Because
+    # of that we accept multiple date as a result.
+    correct_dates = (14..16).map {|n| "1436-02-#{n}" }
+    puts correct_dates
+    assert_includes correct_dates, date.to_hijri.to_s
   end
   
   def test_hijri_to_greo

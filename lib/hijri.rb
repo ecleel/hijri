@@ -3,7 +3,7 @@ module Hijri
 end
 
 require 'hijri/version'
-require 'hijri/hijri'
 require 'hijri/date'
+require 'hijri/gregorian'
 require 'hijri/converter'
 

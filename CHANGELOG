@@ -1,4 +1,9 @@
+=== 0.0.5 / 2014-12-08
+
+* Clean up unwanted code.
+* Fix converting gregorian date to hijri.
+
 === 0.0.1 / 2012-08-05
 
-* Initial release:
+* Initial release
 

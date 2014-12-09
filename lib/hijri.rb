@@ -1,3 +1,5 @@
+require 'date'
+
 module Hijri
   ISLAMIC_EPOCH = 227014
 end

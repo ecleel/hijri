@@ -27,7 +27,7 @@ module Hijri
       def now
         datetime = ::DateTime.now
         hijri = datetime.to_hijri
-        hijri.change hour: datetime.hour, minute: datetime.minute, second: datetime.second
+        hijri.change :hour => datetime.hour, :minute => datetime.minute, :second => datetime.second
         hijri
       end
     end

@@ -34,8 +34,24 @@ class TestHijri < MiniTest::Unit::TestCase
     hdate = Hijri::Date.today
     assert_equal gdate, hdate.to_greo
   end
+  
+  def test_hijri_datetime_now_create_datetime_object_with_now_date_and_time
+    g_datetime = DateTime.now
+    h_datetime = Hijri::DateTime.now
+    exact_date = h_datetime.to_greo
 
-  # TODO test hijri.now 
-  # TODO test Hijri::Date
-  # TODO test Hijri::DateTime
+    # I assert it one by one because there is a different in n variable in
+    # DateTime and I couldn't find it.
+    # -#<DateTime: 2014-12-09T13:46:30+03:00 ((2457001j,38790s,467109000n),+10800s,2299161j)>
+    # +#<DateTime: 2014-12-09T13:46:30+03:00 ((2457001j,38790s,0n),+10800s,2299161j)>
+    assert_equal g_datetime.year, exact_date.year
+    assert_equal g_datetime.month, exact_date.month
+    assert_equal g_datetime.day, exact_date.day
+    assert_equal g_datetime.hour, exact_date.hour
+    assert_equal g_datetime.minute, exact_date.minute
+    assert_equal g_datetime.second, exact_date.second
+    assert_equal g_datetime.zone, exact_date.zone
+  end
+
+  # TODO test hijri.now
 end

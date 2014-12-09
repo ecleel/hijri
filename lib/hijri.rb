@@ -4,6 +4,7 @@ end
 
 require 'hijri/version'
 require 'hijri/date'
+require 'hijri/datetime'
 require 'hijri/gregorian'
 require 'hijri/converter'
 

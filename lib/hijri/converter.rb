@@ -1,11 +1,19 @@
 module Hijri
   module Converter
     def self.hijri_to_greo hijri
-      absolute_to_greo(hijri_to_absolute(hijri.year, hijri.month, hijri.day))
+      results = absolute_to_greo(hijri_to_absolute(hijri.year, hijri.month, hijri.day))
+      if hijri.is_a? DateTime
+        results.push hijri.hour, hijri.minute, hijri.second, hijri.zone
+      end
+      results
     end
       
     def self.greo_to_hijri greg
-      absolute_to_hijri(greo_to_absolute(greg.year, greg.month, greg.day))
+      results = absolute_to_hijri(greo_to_absolute(greg.year, greg.month, greg.day))
+      if greg.is_a? ::DateTime
+        results.push greg.hour, greg.minute, greg.second, greg.zone
+      end
+      results
     end
 
     module_function 

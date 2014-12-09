@@ -36,15 +36,16 @@ hijri = Hijri::Date.new 1430, 1, 3
 toady = Hijri::Date.today
 # and you can convert hijri date to greogian date.
 hijri.to_greo
-
+# and there is DateTime too
+date_and_time = Hijri::DateTime.now
 ```
 
 
 ## TODO
 
-- [ ] Add Hijri::Date and Hijri::DateTime.
+- [x] Add Hijri::Date and Hijri::DateTime.
 - [x] Accept test error with one day range.
-- [ ] Add Hijri::DateTime.now to create Hijri::DateTime object.
+- [x] Add Hijri::DateTime.now to create Hijri::DateTime object.
 - [x] Add Hijri::Date.today to create Hijri::Date object with today date.
 - [ ] Implement strftime method.
 - [ ] Add Comparable for Hijri::Date.

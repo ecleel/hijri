@@ -20,3 +20,9 @@ class Date
     return (@d + 365 * (year - 1) + (year -1) / 4.0 - (year - 1) / 100.0 + (year - 1) / 400.0).to_i
   end
 end
+
+class DateTime
+  def to_hijri
+    Hijri::DateTime.new *Hijri::Converter.greo_to_hijri(self)
+  end
+end

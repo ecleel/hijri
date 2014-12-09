@@ -1,3 +1,9 @@
+=== 0.1.0 / 2014-12-09
+
+* Add Hijri::DateTime class.
+* Add ability to convert Hijri::DateTime to and from DateTime.
+* Add Hijri::DateTime.now.
+
 === 0.0.5 / 2014-12-08
 
 * Clean up unwanted code.

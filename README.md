@@ -1,6 +1,7 @@
 # Hijri
 
 [![Gem Version](https://badge.fury.io/rb/hijri.svg)](http://badge.fury.io/rb/hijri)
+[![Build Status](https://travis-ci.org/ecleel/hijri.svg?branch=master)](https://travis-ci.org/ecleel/hijri)
 
 #####Hijri Date library for Ruby.
 hijri is full Islamic Hijri calendar lib for ruby. The way it work is to convert Gregorian date to absolute date then convert it to Hijri date.

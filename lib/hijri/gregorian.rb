@@ -26,5 +26,9 @@ class DateTime
     Hijri::DateTime.new *Hijri::Converter.greo_to_hijri(self)
   end
   
-  alias :minute :min if RUBY_VERSION < '1.8.8'
+  if RUBY_VERSION < '1.8.8'
+    alias :minute :min
+    alias :second :sec
+  end
+    
 end

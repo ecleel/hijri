@@ -1,3 +1,7 @@
+=== 0.2.0 / 2014-12-09
+
+* hijri now tested and run in all major Ruby implementations and versions.
+
 === 0.1.0 / 2014-12-09
 
 * Add Hijri::DateTime class.

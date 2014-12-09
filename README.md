@@ -26,6 +26,18 @@ Or install it yourself as:
 
     $ gem install hijri
 
+###hijri tested and worked in:
+- Ruby MRI:   
+  - "1.8.7"
+  - "1.9.2"
+  - "1.9.3"
+  - "2.0.0"
+  - "2.1.1"
+- JRuby 1.7.16.1
+  - jruby-18mode
+  - jruby-19mode
+- Rubinius 2.4.1
+
 ## Usage
 
 ```ruby

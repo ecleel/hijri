@@ -16,6 +16,10 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
+if RUBY_VERSION < '1.8.8'
+  require 'minitest/autorun'
+end
+
 require 'minitest/unit'
 
 class MiniTest::Unit::TestCase

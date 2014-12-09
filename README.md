@@ -1,5 +1,7 @@
 # Hijri
 
+[![Gem Version](https://badge.fury.io/rb/hijri.svg)](http://badge.fury.io/rb/hijri)
+
 #####Hijri Date library for Ruby.
 hijri is full Islamic Hijri calendar lib for ruby. The way it work is to convert Gregorian date to absolute date then convert it to Hijri date.
 ### Hijri Calendar (from Wikipedia)
@@ -29,15 +31,15 @@ Or install it yourself as:
 require 'hijri'
 
 # you can create hijri date from stdlib Date class.
-h = Date.today.to_hijri
+h = Date.today.to_hijri # => #<Hijri::Date:0x007f875e8c84e8 @year=1436, @month=2, @day=16>
 # or you can initialize new one.
-hijri = Hijri::Date.new 1430, 1, 3
+hijri = Hijri::Date.new 1430, 1, 3 # => #<Hijri::Date:0x007f875e8dbb38 @year=1430, @month=1, @day=3>
 # or you get today hijri date directly.
-toady = Hijri::Date.today
+toady = Hijri::Date.today # => #<Hijri::Date:0x007f875e8d8410 @year=1436, @month=2, @day=16>
 # and you can convert hijri date to greogian date.
-hijri.to_greo
+hijri.to_greo # => #<Date: 2009-01-01 ((2454833j,0s,0n),+0s,2299161j)>
 # and there is DateTime too
-date_and_time = Hijri::DateTime.now
+date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @year=1436, @month=2, @day=16, @hour=14, @minute=14, @second=39, @zone="+03:00">
 ```
 
 

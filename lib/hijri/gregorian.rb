@@ -2,7 +2,7 @@ class Date
   def to_hijri
     Hijri::Date.new *Hijri::Converter.greo_to_hijri(self)
   end
-  
+
   def last_day_of_gregorian_month(month)
     # Compute the last date of the month for the Gregorian calendar.
     if month == 2
@@ -10,7 +10,7 @@ class Date
     end
     return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
   end
-  
+
   def to_abs
     @d = self.day
     @m = self.month - 1
@@ -25,10 +25,10 @@ class DateTime
   def to_hijri
     Hijri::DateTime.new *Hijri::Converter.greo_to_hijri(self)
   end
-  
+
   if RUBY_VERSION < '1.8.8'
     alias :minute :min
     alias :second :sec
   end
-    
+
 end

@@ -112,22 +112,22 @@ class Date
     class Bag # :nodoc:
 
       def initialize
-	@elem = {}
+      	@elem = {}
       end
 
       def method_missing(t, *args, &block)
-	t = t.to_s
-	set = t.chomp!('=')
-	t = t.intern
-	if set
-	  @elem[t] = args[0]
-	else
-	  @elem[t]
-	end
+      	t = t.to_s
+      	set = t.chomp!('=')
+      	t = t.intern
+      	if set
+      	  @elem[t] = args[0]
+      	else
+      	  @elem[t]
+      	end
       end
 
       def to_hash
-	@elem.reject{|k, v| /\A_/ =~ k.to_s || v.nil?}
+      	@elem.reject{|k, v| /\A_/ =~ k.to_s || v.nil?}
       end
 
     end

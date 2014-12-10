@@ -28,11 +28,11 @@ Or install it yourself as:
 
 ###hijri tested and worked in:
 - Ruby MRI:   
-  - "1.8.7"
-  - "1.9.2"
-  - "1.9.3"
-  - "2.0.0"
-  - "2.1.1"
+  - 1.8.7
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+  - 2.1
 - JRuby 1.7.16.1
   - jruby-18mode
   - jruby-19mode
@@ -45,12 +45,16 @@ require 'hijri'
 
 # you can create hijri date from stdlib Date class.
 h = Date.today.to_hijri # => #<Hijri::Date:0x007f875e8c84e8 @year=1436, @month=2, @day=16>
+
 # or you can initialize new one.
 hijri = Hijri::Date.new 1430, 1, 3 # => #<Hijri::Date:0x007f875e8dbb38 @year=1430, @month=1, @day=3>
+
 # or you get today hijri date directly.
 toady = Hijri::Date.today # => #<Hijri::Date:0x007f875e8d8410 @year=1436, @month=2, @day=16>
+
 # and you can convert hijri date to greogian date.
 hijri.to_greo # => #<Date: 2009-01-01 ((2454833j,0s,0n),+0s,2299161j)>
+
 # and there is DateTime too
 date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @year=1436, @month=2, @day=16, @hour=14, @minute=14, @second=39, @zone="+03:00">
 ```

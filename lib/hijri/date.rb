@@ -1,6 +1,8 @@
 module Hijri
   class Date
 
+    include Comparable
+
     attr_accessor :day, :month, :year
     MONTHNAMES_EN = %w(Muharram Safar Rabia-Awwal Rabia-Thani Jumaada-Awal Jumaada-Thani Rajab Sha'ban Ramadan Shawwal Dhul-Qi'dah Dhul-Hijjah)
     DAYNAMES = %w(as-Sabt al-Ahad al-Ithnayn ath-Thalaathaa al-Arba'aa' al-Khamis al-Jumu'ah)
@@ -22,12 +24,22 @@ module Hijri
       "#{@year}-#{sprintf('%02d', @month)}-#{sprintf('%02d', @day)}"
     end
 
+    def <=>(date)
+      if self.to_s == date.to_s
+        return 0
+      elsif @year > date.year || (@year == date.year && @month > date.month) || (@year == date.year && @month == date.month && @day > date.day)
+        return 1
+      else
+        return -1
+      end
+    end
+
     def to_abs
       month_days = 29 * (month - 1) # days on this year
       nonleap_year_days  = 354 * (year - 1)
       leap_year_days = (3 + (11 * year)) / 30.0
       this_year  = (month / 2.0).to_i
-      
+
       return (day + month_days + this_year + nonleap_year_days + leap_year_days + Hijri::ISLAMIC_EPOCH).to_i
     end
 

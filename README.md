@@ -27,7 +27,7 @@ Or install it yourself as:
     $ gem install hijri
 
 ###hijri tested and worked in:
-- Ruby MRI:   
+- Ruby MRI:
   - 1.8.7
   - 1.9.2
   - 1.9.3
@@ -66,8 +66,8 @@ date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @yea
 - [x] Accept test error with one day range.
 - [x] Add Hijri::DateTime.now to create Hijri::DateTime object.
 - [x] Add Hijri::Date.today to create Hijri::Date object with today date.
+- [x] Add Comparable for Hijri::Date.
 - [ ] Implement strftime method.
-- [ ] Add Comparable for Hijri::Date.
 
 
 ## Contributing

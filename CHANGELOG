@@ -1,3 +1,7 @@
+=== 0.2.5 / 2014-12-11
+
+* Add Comparable for Hijri::Date.
+
 === 0.2.0 / 2014-12-09
 
 * hijri now tested and run in all major Ruby implementations and versions.

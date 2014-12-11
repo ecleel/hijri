@@ -53,5 +53,10 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_equal g_datetime.zone, exact_date.zone
   end
 
-  # TODO test hijri.now
+  def test_comparing_two_hijri_date
+    date1 = Hijri::Date.new 1435, 1, 1
+    date2 = Hijri::Date.new 1435, 1, 1
+    
+    assert_equal date1, date2
+  end
 end

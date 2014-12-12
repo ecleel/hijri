@@ -59,4 +59,10 @@ class TestHijri < MiniTest::Unit::TestCase
     
     assert_equal date1, date2
   end
+
+  def test_hijri_datetime_to_string
+    datetime = Hijri::DateTime.new 1433, 9, 18, 1, 1, 1, '+03:00'
+    assert_equal "1433-09-18T01:01:01+03:00", datetime.to_s
+  end
+
 end

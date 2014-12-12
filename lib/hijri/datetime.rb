@@ -21,7 +21,10 @@ module Hijri
       ::DateTime.new *Converter.hijri_to_greo(self)
     end
     
-    # TODO to_s
+    def to_s
+      zone_str = (@zone == '00:00' ? "+#{@zone}" : @zone)
+      "#{super}T#{sprintf('%02d', @hour)}:#{sprintf('%02d', @minute)}:#{sprintf('%02d', @second)}#{zone_str}"
+    end
 
     class << self
       def now

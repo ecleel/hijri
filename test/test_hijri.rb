@@ -9,7 +9,7 @@ class TestHijri < MiniTest::Unit::TestCase
     assert(!version.empty?, 'should have a VERSION constant')
   end
   
-  def test_hijri_to_string
+  def test_hijri_date_to_string
     date = Hijri::Date.new 1433, 9, 18
     assert_equal "1433-09-18", date.to_s
   end
@@ -57,6 +57,20 @@ class TestHijri < MiniTest::Unit::TestCase
     date1 = Hijri::Date.new 1435, 1, 1
     date2 = Hijri::Date.new 1435, 1, 1
     
+    assert_equal date1, date2
+  end
+
+  def test_comparing_hijri_date_and_greogrian_date
+    date1 = Hijri::Date.new(1435, 1, 1)
+    date2 = Hijri::Date.new(1435, 1, 1).to_greo
+
+    assert_equal date1, date2
+  end
+
+  def test_comparing_two_hijri_datetime
+    date1 = Hijri::DateTime.new(1435, 1, 1, 1, 1, 1, 1)
+    date2 = Hijri::DateTime.new(1435, 1, 1, 1, 1, 1, 1)
+
     assert_equal date1, date2
   end
 

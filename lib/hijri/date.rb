@@ -4,7 +4,11 @@ module Hijri
     include Comparable
 
     attr_accessor :day, :month, :year
-    MONTHNAMES_EN = %w(Muharram Safar Rabia-Awwal Rabia-Thani Jumaada-Awal Jumaada-Thani Rajab Sha'ban Ramadan Shawwal Dhul-Qi'dah Dhul-Hijjah)
+
+    # TODO change mon to month in format.rb.
+    alias :mon :month
+
+    MONTHNAMES = [nil] + %w(Muharram Safar Rabia-Awwal Rabia-Thani Jumaada-Awal Jumaada-Thani Rajab Sha'ban Ramadan Shawwal Dhul-Qi'dah Dhul-Hijjah)
     DAYNAMES = %w(as-Sabt al-Ahad al-Ithnayn ath-Thalaathaa al-Arba'aa' al-Khamis al-Jumu'ah)
 
     class << self

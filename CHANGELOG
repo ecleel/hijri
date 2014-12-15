@@ -1,3 +1,8 @@
+=== master
+
+* Add Hijri::DateTime.to_s
+* Start working in Hijri::Date.strftime method. (need more test)
+
 === 0.2.5 / 2014-12-11
 
 * Add Comparable for Hijri::Date.

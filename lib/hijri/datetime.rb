@@ -1,12 +1,18 @@
 module Hijri
   class DateTime < Date
     
-    attr_reader :hour, :minute, :second, :zone
+    attr_reader :hour, :minute, :second, :offset, :zone
+
+    alias :min :minute
+    alias :sec :second
+    
+
     def initialize(year=1, month=1, day=1, hour=0, minute=0, second=0, zone="00:00")
       super(year, month, day)
       @hour   = hour
       @minute = minute
       @second = second
+      @offset = zone.to_i
       @zone   = zone
     end
     

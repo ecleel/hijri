@@ -88,10 +88,22 @@ class TestHijri < MiniTest::Unit::TestCase
     date = Hijri::Date.new 1436, 2, 21
     assert_equal "Safar", date.strftime("%B")
   end
+
+  def test_hijri_date_strftime_with_no_input
+    date = Hijri::Date.new 1433, 9, 18
+    assert_equal "1433-09-18", date.strftime
+  end
+  
+  # def test_hijri_datetime_strftime_with_no_input
+  #   datetime = Hijri::DateTime.new 1433, 9, 18, 1, 1, 1, '+03:00'
+  #   assert_equal "1433-09-18T01:01:01+03:00", datetime.strftime
+  # end
+
   # TODO remove abbrev Month from format.
   # TODO use arabic names for day
   # TODO for abbrev day wi'll use days names without al. e.g sabt ahad
   # TODO we need to delete a lot of stuff from format.
-  
+
+  # TODO add Hijri::Date.change and test it.
 
 end

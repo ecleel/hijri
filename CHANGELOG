@@ -1,6 +1,7 @@
 === master
 
 * Add Hijri::DateTime.to_s
+* protect year, month and day in Hijri::Date.
 * Start working in Hijri::Date.strftime method. (need more test)
 
 === 0.2.5 / 2014-12-11

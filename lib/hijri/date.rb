@@ -12,6 +12,21 @@ module Hijri
 
     MONTHNAMES = [nil] + %w(Muharram Safar Rabia-Awwal Rabia-Thani Jumaada-Awal Jumaada-Thani Rajab Sha'ban Ramadan Shawwal Dhul-Qi'dah Dhul-Hijjah)
     DAYNAMES = %w(as-Sabt al-Ahad al-Ithnayn ath-Thalaathaa al-Arba'aa' al-Khamis al-Jumu'ah)
+    ABBR_MONTHNAMES = [nil] + ["Muharram", "Safar", "Rabia I", "Rabia II", "Jumaada I", "Jumaada II", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhul-Qi'dah", "Dhul-Hijjah"]
+    ABBR_DAYNAMES = %w(Sabt Ahad Ithnayn Thalaathaa Arba'aa' Khamis Jumu'ah)
+    
+    [MONTHNAMES, DAYNAMES, ABBR_MONTHNAMES, ABBR_DAYNAMES].each do |xs|
+      xs.each{|x| x.freeze unless x.nil?}.freeze
+    end
+    
+    HALF_DAYS_IN_DAY       = Rational(1, 2) # :nodoc:
+    HOURS_IN_DAY           = Rational(1, 24) # :nodoc:
+    MINUTES_IN_DAY         = Rational(1, 1440) # :nodoc:
+    SECONDS_IN_DAY         = Rational(1, 86400) # :nodoc:
+    MILLISECONDS_IN_DAY    = Rational(1, 86400*10**3) # :nodoc:
+    NANOSECONDS_IN_DAY     = Rational(1, 86400*10**9) # :nodoc:
+    MILLISECONDS_IN_SECOND = Rational(1, 10**3) # :nodoc:
+    NANOSECONDS_IN_SECOND  = Rational(1, 10**9) # :nodoc:
 
     class << self
       def today

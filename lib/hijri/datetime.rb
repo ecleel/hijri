@@ -12,7 +12,7 @@ module Hijri
       @hour   = hour
       @minute = minute
       @second = second
-      @offset = zone.to_i
+      @offset = zone.to_f / 24
       @zone   = zone
     end
     

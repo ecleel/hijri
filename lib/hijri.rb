@@ -12,4 +12,3 @@ require 'hijri/datetime'
 require 'hijri/gregorian'
 require 'hijri/converter'
 require 'hijri/format'
-

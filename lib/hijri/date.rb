@@ -91,5 +91,14 @@ module Hijri
       (((year * AVERAGE_YEARS_DAYS) + yday) % 7).floor
     end
 
+    def weeknum(week_start=0)
+      yday / 7
+    end
+    alias :cweek :weeknum
+
+    def wnum0() weeknum(0) end # :nodoc:
+    def wnum1() weeknum(1) end # :nodoc:
+
+    private :wnum0, :wnum1
   end
 end

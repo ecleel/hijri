@@ -128,6 +128,12 @@ class TestHijri < MiniTest::Unit::TestCase
     date = Hijri::Date.new 1436, 3, 20
     assert_equal "079", date.strftime('%j')
   end
+  
+  def test_hijri_week_number_of_the_year
+    date = Hijri::Date.new 1436, 3, 20
+    assert_equal("11", date.strftime('%U'))
+    assert_equal("11", date.strftime('%W'))
+  end
 
   # TODO add Hijri::Date.change and test it.
 

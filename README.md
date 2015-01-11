@@ -37,7 +37,7 @@ Or install it yourself as:
 - JRuby 1.7.16.1
   - jruby-18mode
   - jruby-19mode
-- ~~Rubinius 2.4.1~~
+- Rubinius 2.4.1
 
 ## Usage
 

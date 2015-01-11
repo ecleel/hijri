@@ -2,7 +2,10 @@
 
 * Add Hijri::DateTime.to_s
 * protect year, month and day in Hijri::Date.
-* Start working in Hijri::Date.strftime method. (need more test)
+* Implement Hijri::Date.strftime method.
+* Add Hijri::Date.yday method
+* Add Hijri::Date.wday method
+* Add Hijri::Date.weeknum method
 
 === 0.2.5 / 2014-12-11
 

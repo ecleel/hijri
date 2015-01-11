@@ -58,6 +58,9 @@ hijri.to_greo # => #<Date: 2009-01-01 ((2454833j,0s,0n),+0s,2299161j)>
 
 # and there is DateTime too
 date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @year=1436, @month=2, @day=16, @hour=14, @minute=14, @second=39, @zone="+03:00">
+
+# hijri support strftime method with the same option as Greogian date format
+Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 ```
 
 
@@ -68,7 +71,8 @@ date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @yea
 - [x] Add Hijri::DateTime.now to create Hijri::DateTime object.
 - [x] Add Hijri::Date.today to create Hijri::Date object with today date.
 - [x] Add Comparable for Hijri::Date.
-- [ ] Implement strftime method.
+- [x] Implement strftime method.
+- [ ] Add Hijri::Date.change method.
 
 
 ## Contributing

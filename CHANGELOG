@@ -1,4 +1,4 @@
-=== master
+=== 0.4.0 / 2015-01-11
 
 * Add Hijri::DateTime.to_s
 * protect year, month and day in Hijri::Date.

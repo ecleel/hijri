@@ -72,6 +72,7 @@ module Hijri
 
       return (day + month_days + this_year + nonleap_year_days + leap_year_days + Hijri::ISLAMIC_EPOCH).to_i
     end
+    alias :abs :to_abs
 
     def to_greo
       ::Date.new *Converter.hijri_to_greo(self)
@@ -80,6 +81,14 @@ module Hijri
     # Just to have a consistent Interface.
     def to_hijri
       self
+    end
+
+    def yday
+      (((month - 1) * AVERAGE_MONTH_DAYS) + day).floor
+    end
+
+    def wday
+      (((year * AVERAGE_YEARS_DAYS) + yday) % 7).floor
     end
 
   end

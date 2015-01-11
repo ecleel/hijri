@@ -110,23 +110,25 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_equal "Rabia I", date.strftime('%b')
   end
   
-  # def test_hijri_full_arabic_day_name
-  #   date = Hijri::Date.new 1436, 3, 1
-  #   assert_equal "AsSabt", date.strftime('%A')
-  # end
-  #
-  # def test_hijri_short_arabic_day_name
-  #   date = Hijri::Date.new 1436, 3, 1
-  #   assert_equal "Rabia I", date.strftime('%b')
-  # end
+  def test_hijri_full_arabic_day_name
+    (15..21).each do |day|
+      date = Hijri::Date.new 1436, 1, day
+      assert_equal Hijri::Date::DAYNAMES[(day-1)%7], date.strftime('%A')
+    end
+  end
 
-  # TODO remove abbrev Month from format.
-  # TODO use arabic names for day
-  # TODO for abbrev day wi'll use days names without al. e.g sabt ahad
-  # TODO we need to delete a lot of stuff from format.
+  def test_hijri_short_arabic_day_name
+    (1..7).each do |day|      
+      date = Hijri::Date.new 1436, 3, day
+      assert_equal Hijri::Date::ABBR_DAYNAMES[(day+2)%7], date.strftime('%a')
+    end
+  end
+  
+  def test_hijri_day_of_the_year
+    date = Hijri::Date.new 1436, 3, 20
+    assert_equal "079", date.strftime('%j')
+  end
 
   # TODO add Hijri::Date.change and test it.
-  # TODO yday
-  # TODO wday to make %a and %A work
 
 end

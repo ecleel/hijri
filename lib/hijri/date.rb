@@ -5,7 +5,6 @@ module Hijri
 
     attr_reader :day, :month, :year
 
-    # TODO change mon to month in format.rb.
     alias :mon  :month
     alias :mday :day
 
@@ -47,7 +46,9 @@ module Hijri
       date = date.to_hijri
       if self.to_s == date.to_s
         return 0
-      elsif @year > date.year || (@year == date.year && @month > date.month) || (@year == date.year && @month == date.month && @day > date.day)
+      elsif @year > date.year ||
+           (@year == date.year && @month > date.month) ||
+           (@year == date.year && @month == date.month && @day > date.day)
         return 1
       else
         return -1

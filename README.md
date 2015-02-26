@@ -50,16 +50,16 @@ h = Date.today.to_hijri # => #<Hijri::Date:0x007f875e8c84e8 @year=1436, @month=2
 # or you can initialize new one.
 hijri = Hijri::Date.new 1430, 1, 3 # => #<Hijri::Date:0x007f875e8dbb38 @year=1430, @month=1, @day=3>
 
-# or you get today hijri date directly.
+# or you can get today hijri date directly.
 toady = Hijri::Date.today # => #<Hijri::Date:0x007f875e8d8410 @year=1436, @month=2, @day=16>
 
-# and you can convert hijri date to greogian date.
+# and you can convert hijri date to greogian date also.
 hijri.to_greo # => #<Date: 2009-01-01 ((2454833j,0s,0n),+0s,2299161j)>
 
 # and there is DateTime too
 date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @year=1436, @month=2, @day=16, @hour=14, @minute=14, @second=39, @zone="+03:00">
 
-# hijri support strftime method with the same option as Greogian date format
+# hijri support strftime method with the same options as Greogian date format method
 Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 ```
 
@@ -72,8 +72,8 @@ Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 - [x] Add Hijri::Date.today to create Hijri::Date object with today date.
 - [x] Add Comparable for Hijri::Date.
 - [x] Implement strftime method.
-- [ ] Implement Hijri::Date.strptime method.
 - [ ] Add Hijri::Date.change method.
+- [ ] Implement Hijri::Date.strptime method.
 
 
 ## Contributing

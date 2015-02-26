@@ -73,6 +73,7 @@ Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 - [x] Add Comparable for Hijri::Date.
 - [x] Implement strftime method.
 - [x] Add Hijri::Date.change method.
+- [x] Raise ArgumentError when one of arguments has an invalid date value.
 - [ ] Implement Hijri::Date.strptime method.
 
 

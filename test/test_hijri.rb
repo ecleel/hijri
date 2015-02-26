@@ -90,8 +90,8 @@ class TestHijri < MiniTest::Unit::TestCase
   end
 
   def test_hijri_date_strftime_with_no_input
-    date = Hijri::Date.new 1433, 9, 18
-    assert_equal "1433-09-18", date.strftime
+    date = Hijri::Date.new 1433, 12, 18
+    assert_equal "1433-12-18", date.strftime
   end
   
   def test_hijri_datetime_strftime_with_no_input
@@ -139,7 +139,7 @@ class TestHijri < MiniTest::Unit::TestCase
     date = Hijri::Date.new 1436, 3, 20
     date_to_be = Hijri::Date.new 1435, 4, 10
     
-    date.change year: 1435, month: 4, day: 10
+    date.change :year => 1435, :month => 4, :day => 10
     assert_equal date_to_be, date
   end
 
@@ -147,7 +147,7 @@ class TestHijri < MiniTest::Unit::TestCase
     date = Hijri::Date.new 1436, 3, 20
     date_to_be = Hijri::Date.new 1435, 4, 20
     
-    date.change year: 1435, month: 4, day: nil
+    date.change :year => 1435, :month => 4, :day => nil
     assert_equal date_to_be, date
   end
 
@@ -155,7 +155,7 @@ class TestHijri < MiniTest::Unit::TestCase
     datetime = Hijri::DateTime.new(1436, 3, 20, 10, 15, 30)
     datetime_to_be = Hijri::DateTime.new(1435, 4, 10, 9, 30, 0)
     
-    datetime.change year: 1435, month: 4, day: 10, hour: 9, minute: 30, second: 0
+    datetime.change :year => 1435, :month => 4, :day => 10, :hour => 9, :minute => 30, :second => 0
     assert_equal datetime_to_be, datetime
   end
 
@@ -163,8 +163,16 @@ class TestHijri < MiniTest::Unit::TestCase
     datetime = Hijri::DateTime.new(1436, 3, 20, 10, 15, 30)
     datetime_to_be = Hijri::DateTime.new(1435, 4, 10, 9, 30, 30)
     
-    datetime.change year: 1435, month: 4, day: 10, hour: 9, minute: 30, second: nil
+    datetime.change :year => 1435, :month => 4, :day => 10, :hour => 9, :minute => 30, :second => nil
     assert_equal datetime_to_be, datetime
+  end
+
+  def test_initilize_date_with_invalid_arguments
+    assert_raises(ArgumentError) { Hijri::Date.new(1430, 30, 10) }
+  end
+
+  def test_initilize_datetime_with_invalid_arguments
+    assert_raises(ArgumentError) { Hijri::DateTime.new(1430, 12, 10, 30, 70) }
   end
 
 end

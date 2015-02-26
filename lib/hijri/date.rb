@@ -34,7 +34,11 @@ module Hijri
     end
 
     def initialize(year=1, month=1, day=1)
-       @year, @month, @day = year, month, day
+      if valid_date?(year, month, day)
+        @year, @month, @day = year, month, day
+      else
+        raise ArgumentError, "Invalid Date"           
+      end
     end
     
     def change(kargs)
@@ -80,6 +84,13 @@ module Hijri
     # Just to have a consistent Interface.
     def to_hijri
       self
+    end
+    
+    def valid_date?(year, month, day)
+      return false unless (1..Float::INFINITY).cover?(year)
+      return false unless (1..12).cover?(month)
+      return false unless (1..30).cover?(day)
+      return true
     end
 
     def yday

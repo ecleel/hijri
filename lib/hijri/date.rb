@@ -87,7 +87,7 @@ module Hijri
     end
     
     def valid_date?(year, month, day)
-      return false unless (1..Float::INFINITY).cover?(year)
+      return false unless (1..INFINITY).cover?(year)
       return false unless (1..12).cover?(month)
       return false unless (1..30).cover?(day)
       return true

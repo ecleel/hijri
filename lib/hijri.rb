@@ -8,7 +8,7 @@ module Hijri
   INFINITY = +1.0/0.0
   
   if RUBY_VERSION < '1.8.8'
-    class Range
+    class ::Range
       alias :cover? :include?
     end
   end

@@ -8,7 +8,6 @@ module Hijri
     # TODO change mon to month in format.rb.
     alias :mon  :month
     alias :mday :day
-    
 
     MONTHNAMES = [nil] + %w(Muharram Safar Rabia-Awwal Rabia-Thani Jumaada-Awal Jumaada-Thani Rajab Sha'ban Ramadan Shawwal Dhul-Qi'dah Dhul-Hijjah)
     DAYNAMES = %w(as-Sabt al-Ahad al-Ithnayn ath-Thalaathaa al-Arba'aa' al-Khamis al-Jumu'ah)
@@ -37,15 +36,6 @@ module Hijri
 
     def initialize(year=1, month=1, day=1)
        @year, @month, @day = year, month, day
-    end
-
-    def islamic_leap_year?
-      return (((((11 * self.year) + 14) % 30) < 11) ? true : false)
-    end
-
-    def last_day_of_islamic_month
-      # Last day in month during year on the Islamic calendar.
-      return ((self.month % 2 == 1) || (self.month == 12 && islamic_leap_year?) ? 30 : 29)
     end
 
     def to_s

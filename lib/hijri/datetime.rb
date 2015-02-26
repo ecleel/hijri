@@ -29,7 +29,8 @@ module Hijri
 
     def to_s
       zone_str = (@zone == '00:00' ? "+#{@zone}" : @zone)
-      "#{super}T#{sprintf('%02d', @hour)}:#{sprintf('%02d', @minute)}:#{sprintf('%02d', @second)}#{zone_str}"
+      format('%.4d-%02d-%02dT%02d:%02d:%02d%s',
+  	   year, mon, mday, hour, min, sec, zone_str)
     end
 
     class << self

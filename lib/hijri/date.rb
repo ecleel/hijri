@@ -46,7 +46,7 @@ module Hijri
     end
 
     def to_s
-      "#{@year}-#{sprintf('%02d', @month)}-#{sprintf('%02d', @day)}"
+      format('%.4d-%02d-%02d', year, month, day)
     end
 
     def <=>(date)

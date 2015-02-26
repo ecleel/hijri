@@ -16,6 +16,7 @@ module Hijri
     end
 
     def change(kargs)
+      super(kargs)
       @hour   = kargs.fetch :hour, hour
       @minute = kargs.fetch :minute, minute
       @second = kargs.fetch :second, second

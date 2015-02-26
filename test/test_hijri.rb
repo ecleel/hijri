@@ -131,10 +131,40 @@ class TestHijri < MiniTest::Unit::TestCase
   
   def test_hijri_week_number_of_the_year
     date = Hijri::Date.new 1436, 3, 20
-    assert_equal("11", date.strftime('%U'))
-    assert_equal("11", date.strftime('%W'))
+    assert_equal "11", date.strftime('%U')
+    assert_equal "11", date.strftime('%W')
   end
 
-  # TODO add Hijri::Date.change and test it.
+  def test_date_change
+    date = Hijri::Date.new 1436, 3, 20
+    date_to_be = Hijri::Date.new 1435, 4, 10
+    
+    date.change year: 1435, month: 4, day: 10
+    assert_equal date_to_be, date
+  end
+
+  def test_date_change_with_nil_arguments
+    date = Hijri::Date.new 1436, 3, 20
+    date_to_be = Hijri::Date.new 1435, 4, 20
+    
+    date.change year: 1435, month: 4, day: nil
+    assert_equal date_to_be, date
+  end
+
+  def test_datetime_change
+    datetime = Hijri::DateTime.new(1436, 3, 20, 10, 15, 30)
+    datetime_to_be = Hijri::DateTime.new(1435, 4, 10, 9, 30, 0)
+    
+    datetime.change year: 1435, month: 4, day: 10, hour: 9, minute: 30, second: 0
+    assert_equal datetime_to_be, datetime
+  end
+
+  def test_datetime_change_with_nil_arguments
+    datetime = Hijri::DateTime.new(1436, 3, 20, 10, 15, 30)
+    datetime_to_be = Hijri::DateTime.new(1435, 4, 10, 9, 30, 30)
+    
+    datetime.change year: 1435, month: 4, day: 10, hour: 9, minute: 30, second: nil
+    assert_equal datetime_to_be, datetime
+  end
 
 end

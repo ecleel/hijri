@@ -72,7 +72,7 @@ Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 - [x] Add Hijri::Date.today to create Hijri::Date object with today date.
 - [x] Add Comparable for Hijri::Date.
 - [x] Implement strftime method.
-- [ ] Add Hijri::Date.change method.
+- [x] Add Hijri::Date.change method.
 - [ ] Implement Hijri::Date.strptime method.
 
 

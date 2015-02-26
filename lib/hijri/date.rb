@@ -36,6 +36,14 @@ module Hijri
     def initialize(year=1, month=1, day=1)
        @year, @month, @day = year, month, day
     end
+    
+    def change(kargs)
+      # Remove nil values
+      kargs.reject!{|k,v| v.nil?}
+      @year  = kargs.fetch :year , year
+      @month = kargs.fetch :month, month
+      @day   = kargs.fetch :day  , day
+    end
 
     def to_s
       "#{@year}-#{sprintf('%02d', @month)}-#{sprintf('%02d', @day)}"

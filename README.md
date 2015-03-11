@@ -4,8 +4,9 @@
 [![Build Status](https://travis-ci.org/ecleel/hijri.svg?branch=master)](https://travis-ci.org/ecleel/hijri)
 
 #####Hijri Date library for Ruby.
-hijri is full Islamic Hijri calendar lib for ruby. The way it work is to convert Gregorian date to absolute date then convert it to Hijri date.
-#### Hijri Calendar (from Wikipedia)
+hijri is full lunar Islamic Hijri calendar lib for ruby.
+
+##### Hijri Calendar (from Wikipedia)
 The Islamic calendar or Muslim calendar or Hijri calendar: is a lunar calendar consisting of 12 lunar months in a year of 354 or 355 days. It is used to date events in many Muslim countries (concurrently with the Gregorian calendar), and used by Muslims everywhere to determine the proper day on which to celebrate Islamic holy days and festivals. The first year was the year during which the emigration of the Islamic prophet Muhammad from Mecca to Medina, known as the Hijra, occurred. Each numbered year is designated either H for Hijra or AH for the Latin anno Hegirae (in the year of the Hijra).[1] A limited number of years before Hijra (BH) are used to date events related to Islam, such as the birth of Muhammad in 53 BH.[2] The current Islamic year is 1431 AH, from approximately 18 December 2009 (evening) to 6 December 2010 (evening).
 
 http://en.wikipedia.org/wiki/Islamic_calendar
@@ -37,7 +38,7 @@ Or install it yourself as:
 - JRuby 1.7.16.1
   - jruby-18mode
   - jruby-19mode
-- Rubinius 2.4.1
+- Rubinius 2.5.2
 
 ## Usage
 
@@ -51,7 +52,7 @@ h = Date.today.to_hijri # => #<Hijri::Date:0x007f875e8c84e8 @year=1436, @month=2
 hijri = Hijri::Date.new 1430, 1, 3 # => #<Hijri::Date:0x007f875e8dbb38 @year=1430, @month=1, @day=3>
 
 # or you can get today hijri date directly.
-toady = Hijri::Date.today # => #<Hijri::Date:0x007f875e8d8410 @year=1436, @month=2, @day=16>
+today = Hijri::Date.today # => #<Hijri::Date:0x007f875e8d8410 @year=1436, @month=2, @day=16>
 
 # and you can convert hijri date to greogian date also.
 hijri.to_greo # => #<Date: 2009-01-01 ((2454833j,0s,0n),+0s,2299161j)>

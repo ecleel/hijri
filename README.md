@@ -54,7 +54,7 @@ Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 
 ## Supported Ruby versions
 
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is [tested against](https://travis-ci.org/ecleel/hijri) the following Ruby
 implementations:
 
 * MRI 1.8.7

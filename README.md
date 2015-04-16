@@ -63,8 +63,8 @@ implementations:
 * MRI 2.0.0
 * MRI 2.1.0
 * MRI 2.2.0
-* [JRuby][]
-* [Rubinius][]
+* JRuby
+* Rubinius
 
 If something doesn't work on one of these Ruby versions, it's a bug.
 

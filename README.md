@@ -27,18 +27,6 @@ Or install it yourself as:
 
     $ gem install hijri
 
-###hijri tested and worked in:
-- Ruby MRI:
-  - 1.8.7
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - 2.1
-  - 2.2
-- JRuby 1.7.16.1
-  - jruby-18mode
-  - jruby-19mode
-- Rubinius 2.5.2
 
 ## Usage
 
@@ -64,6 +52,32 @@ date_and_time = Hijri::DateTime.now # => #<Hijri::DateTime:0x007f875e8eac00 @yea
 Hijri::DateTime.now.strftime('%c') # => "Ahad Rabia I 20 16:00:25 1436"
 ```
 
+## Supported Ruby versions
+
+This library aims to support and is [tested against](https://travis-ci.org/ecleel/hijri) the following Ruby
+implementations:
+
+* MRI 1.8.7
+* MRI 1.9.2
+* MRI 1.9.3
+* MRI 2.0.0
+* MRI 2.1.0
+* MRI 2.2.0
+* JRuby
+* Rubinius
+
+If something doesn't work on one of these Ruby versions, it's a bug.
+
+This library may inadvertently work (or seem to work) on other Ruby
+implementations, however support will only be provided for the versions listed
+above.
+
+If you would like this library to support another Ruby version, you may
+volunteer to be a maintainer. Being a maintainer entails making sure all tests
+run and pass on that implementation. When something breaks on your
+implementation, you will be responsible for providing patches in a timely
+fashion. If critical issues for a particular implementation exist at the time
+of a major release, support for that Ruby version may be dropped.
 
 ## TODO
 

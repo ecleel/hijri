@@ -12,11 +12,11 @@ module Hijri
     DAYNAMES = %w(as-Sabt al-Ahad al-Ithnayn ath-Thalaathaa al-Arba'aa' al-Khamis al-Jumu'ah)
     ABBR_MONTHNAMES = [nil] + ["Muharram", "Safar", "Rabia I", "Rabia II", "Jumaada I", "Jumaada II", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhul-Qi'dah", "Dhul-Hijjah"]
     ABBR_DAYNAMES = %w(Sabt Ahad Ithnayn Thalaathaa Arba'aa' Khamis Jumu'ah)
-    
+
     [MONTHNAMES, DAYNAMES, ABBR_MONTHNAMES, ABBR_DAYNAMES].each do |xs|
       xs.each{|x| x.freeze unless x.nil?}.freeze
     end
-    
+
     HALF_DAYS_IN_DAY       = Rational(1, 2) # :nodoc:
     HOURS_IN_DAY           = Rational(1, 24) # :nodoc:
     MINUTES_IN_DAY         = Rational(1, 1440) # :nodoc:
@@ -37,10 +37,10 @@ module Hijri
       if valid_date?(year, month, day)
         @year, @month, @day = year, month, day
       else
-        raise ArgumentError, "Invalid Date"           
+        raise ArgumentError, "Invalid Date"
       end
     end
-    
+
     def change(kargs)
       # Remove nil values
       kargs.reject!{|k,v| v.nil?}
@@ -85,7 +85,7 @@ module Hijri
     def to_hijri
       self
     end
-    
+
     def valid_date?(year, month, day)
       return false unless (1..INFINITY).cover?(year)
       return false unless (1..12).cover?(month)

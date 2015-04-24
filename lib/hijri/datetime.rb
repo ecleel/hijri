@@ -15,7 +15,7 @@ module Hijri
         @offset = zone.to_f / 24
         @zone   = zone
       else
-        raise ArgumentError, "Invalid Date"        
+        raise ArgumentError, "Invalid Date"
       end
     end
 

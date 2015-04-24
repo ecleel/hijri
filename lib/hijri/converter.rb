@@ -7,7 +7,7 @@ module Hijri
       end
       results
     end
-      
+
     def self.greo_to_hijri greg
       results = absolute_to_hijri(greo_to_absolute(greg.year, greg.month, greg.day))
       if greg.is_a? ::DateTime
@@ -16,18 +16,18 @@ module Hijri
       results
     end
 
-    module_function 
-                    
+    module_function
+
     # Hijri Methods
     def islamic_leap_year?(year)
       return (((((11 * year) + 14) % 30) < 11) ? true : false)
     end
-  
+
     def last_day_of_islamic_month(month, year)
       # Last day in month during year on the Islamic calendar.
       return ((month % 2 == 1) || (month == 12 && islamic_leap_year?(year)) ? 30 : 29)
     end
-      
+
     def hijri_to_absolute(year, month, day)
       month_days = 29 * (month - 1) # days on this year
       nonleap_year_days  = 354 * (year - 1)
@@ -36,7 +36,7 @@ module Hijri
 
       return (day + month_days + this_year + nonleap_year_days + leap_year_days + ISLAMIC_EPOCH).to_i
     end
-      
+
     # Gregorian Methods
     def last_day_of_gregorian_month(month, year)
       # Compute the last date of the month for the Gregorian calendar.
@@ -45,7 +45,7 @@ module Hijri
       end
       return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
     end
-      
+
     # Absolute Methods
     def greo_to_absolute(year, month, day)
       # Computes the absolute date from the Gregorian date.
@@ -78,7 +78,7 @@ module Hijri
 
       return [year, month, day]
     end
-      
+
     def absolute_to_hijri(abs)
       # Computes the Islamic date from the absolute date.
       if abs <= ISLAMIC_EPOCH

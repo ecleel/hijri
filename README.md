@@ -1,5 +1,7 @@
 # Hijri
 
+[![Join the chat at https://gitter.im/ecleel/hijri](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ecleel/hijri?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gem Version](https://badge.fury.io/rb/hijri.svg)](http://badge.fury.io/rb/hijri)
 [![Build Status](https://travis-ci.org/ecleel/hijri.svg?branch=master)](https://travis-ci.org/ecleel/hijri)
 

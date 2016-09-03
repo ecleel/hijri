@@ -2,6 +2,8 @@
 
 require File.expand_path('../lib/hijri/version', __FILE__)
 
+rake_version = "11.2.2"
+
 Gem::Specification.new do |gem|
   gem.name          = "hijri"
   gem.version       = Hijri::VERSION
@@ -18,6 +20,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_development_dependency 'bundler'
-  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'yard'
 end

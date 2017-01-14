@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :test, :development do
-  if %w(1.8.7 2.2.0 2.2.2 2.3.0 2.3.1).include? RUBY_VERSION
+  if %w(1.8.7 2.2.0 2.2.2 2.3.0 2.3.1 2.4.0).include? RUBY_VERSION
     gem 'minitest'
   end
   

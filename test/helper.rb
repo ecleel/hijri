@@ -16,9 +16,9 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-if %w(1.8.7 2.2.0 2.2.2 2.3.0 2.3.1).include? RUBY_VERSION
+# if %w(1.8.7 2.2.0 2.2.2 2.3.0 2.3.1 2.4.1).include? RUBY_VERSION
   require 'minitest/autorun'
-end
+# end
 
 require 'minitest/unit'
 

@@ -65,8 +65,10 @@ implementations:
 * MRI 2.1.0
 * MRI 2.2.0
 * MRI 2.3.0
-* JRuby
-* Rubinius
+* MRI 2.4.0
+* MRI 2.4.1
+* JRuby 1.8 mode
+* JRuby 1.9 mode
 
 If something doesn't work on one of these Ruby versions, it's a bug.
 

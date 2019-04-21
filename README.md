@@ -67,6 +67,8 @@ implementations:
 * MRI 2.3.0
 * MRI 2.4.0
 * MRI 2.4.1
+* MRI 2.5.1
+* MRI 2.6.2
 * JRuby 1.8 mode
 * JRuby 1.9 mode
 

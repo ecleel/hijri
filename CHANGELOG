@@ -1,6 +1,7 @@
 === master
 
 * Resolve some hijri date raise error. fix issue #5
+* Ability to adjust date. resolve issue #6
 
 === 0.5.0 / 2015-02-26
 

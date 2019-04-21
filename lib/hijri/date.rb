@@ -1,6 +1,5 @@
 module Hijri
   class Date
-
     include Comparable
 
     attr_reader :day, :month, :year
@@ -77,8 +76,8 @@ module Hijri
     end
     alias :abs :to_abs
 
-    def to_greo
-      ::Date.new *Converter.hijri_to_greo(self)
+    def to_greo(adjust=0)
+      ::Date.new(*Converter.hijri_to_greo(self)) + adjust
     end
 
     # Just to have a consistent Interface.

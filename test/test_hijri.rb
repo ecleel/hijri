@@ -175,6 +175,24 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_raises(ArgumentError) { Hijri::DateTime.new(1430, 12, 10, 30, 70) }
   end
 
+  def test_to_hijri_accept_adjust_variable
+    today     = Date.today.to_hijri
+    yesterday = Date.today.to_hijri(-1)
+    tomorrow  = Date.today.to_hijri(+1)
+
+    assert today > yesterday
+    assert tomorrow > today
+  end
+
+  def test_to_goreg_accept_adjust_variable
+    today     = Hijri::Date.today.to_greo
+    yesterday = Hijri::Date.today.to_greo(-1)
+    tomorrow  = Hijri::Date.today.to_greo(+1)
+
+    assert today > yesterday
+    assert tomorrow > today
+  end
+
   def test_resolve_hijri_date_1439_4_12_to_greo_not_raise_error
     # this to test issue #5 https://github.com/ecleel/hijri/issues/5
     hdate = Hijri::Date.new(1439, 4, 12)
@@ -182,4 +200,11 @@ class TestHijri < MiniTest::Unit::TestCase
     assert_equal gdate, hdate.to_greo
   end
 
+  # def test_issue_4_of_wrong_conversion
+  #   gdate = Date.new 2017, 9, 1
+  #   hdate = Hijri::Date.new 1438, 12, 9
+  #
+  #   # assert_equal hdate, gdate.to_hijri
+  #   assert_equal Hijri::Date.new(1437, 12, 6), Date.new(2016, 9, 9).to_hijri
+  # end
 end

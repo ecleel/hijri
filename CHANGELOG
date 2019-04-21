@@ -1,3 +1,7 @@
+=== master
+
+* Resolve some hijri date raise error. fix issue #5
+
 === 0.5.0 / 2015-02-26
 
 * Add Hijri::Date.change

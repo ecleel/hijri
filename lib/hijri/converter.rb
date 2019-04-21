@@ -2,6 +2,7 @@ module Hijri
   module Converter
     def self.hijri_to_greo hijri
       results = absolute_to_greo(hijri_to_absolute(hijri.year, hijri.month, hijri.day))
+
       if hijri.is_a? DateTime
         results.push hijri.hour, hijri.minute, hijri.second, hijri.zone
       end
@@ -46,10 +47,20 @@ module Hijri
       return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
     end
 
+    def adjust_day(year, month, day)
+      last_day = last_day_of_gregorian_month(month, year)
+      if last_day > day
+        day
+      else
+        last_day
+      end
+    end
+
     # Absolute Methods
     def greo_to_absolute(year, month, day)
       # Computes the absolute date from the Gregorian date.
       d = day
+
       (month - 1).downto(1) do |m|
         d += last_day_of_gregorian_month(m, year)
       end
@@ -69,12 +80,15 @@ module Hijri
       while abs >= greo_to_absolute(year + 1, 1, 1)
         year += 1
       end
+
       # Search forward month by month from January
       month = 1
       while abs > greo_to_absolute(year, month, last_day_of_gregorian_month(month, year))
         month += 1
+        break if month == 12
       end
       day = abs - greo_to_absolute(year, month, 1) + 1
+      day = adjust_day(year, month, day)
 
       return [year, month, day]
     end
